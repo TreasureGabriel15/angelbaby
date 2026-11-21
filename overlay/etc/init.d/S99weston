@@ -1,0 +1,12 @@
+#!/bin/sh
+case "$1" in
+  start)
+    mkdir -p /tmp/xdg && chmod 0700 /tmp/xdg
+    export XDG_RUNTIME_DIR=/tmp/xdg
+    export TZ=WAT-1
+    weston --backend=drm --renderer=pixman > /var/log/weston.log 2>&1 &
+    ;;
+  stop)
+    killall weston
+    ;;
+esac
