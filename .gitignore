@@ -1,3 +1,5 @@
 kernel/
 build/
 userspace/init
+buildroot/
+buildroot-*.tar.gz
